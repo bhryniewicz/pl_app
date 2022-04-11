@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
+  padding-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
 `;
 
 const fontStyles = css`
@@ -21,8 +23,8 @@ export const NavEl = styled.h4`
 `;
 
 export const Image = styled.img`
-  padding: 0 30px;
-  transform: scale(0.7);
+  padding: 0 10px;
+  transform: scale(0.5);
 `;
 
 export const NavButton = styled.button`

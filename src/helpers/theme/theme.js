@@ -6,6 +6,7 @@ export const theme = {
     bold: '700',
   },
   fontSizes: {
+    xxsmall: '14px',
     xsmall: '16px',
     small: '18px',
     medium: '24px',
