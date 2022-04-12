@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 10vh;
+  z-index: 100;
 `;
 
 const fontStyles = css`
@@ -20,6 +21,9 @@ export const NavEl = styled.h4`
   padding: 0 35px;
 
   ${fontStyles}
+  &:hover {
+    border-bottom: 2px solid ${({ theme }) => theme.colors.orange};
+  }
 `;
 
 export const Image = styled.img`
