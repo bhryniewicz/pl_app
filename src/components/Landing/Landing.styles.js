@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { Diamond } from 'assets/images';
 
 export const Wrapper = styled.div`
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -60px;
   position: relative;
 
   &::before {
@@ -14,7 +13,7 @@ export const Wrapper = styled.div`
     display: block;
     position: absolute;
     right: 100px;
-    bottom: 0;
+    bottom: -50px;
     opacity: 0.16;
     transform: scale(8) rotate(-35deg);
   }
@@ -35,6 +34,12 @@ export const Title = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   letter-spacing: 2px;
   margin-bottom: 30px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    color: ${({ theme }) => theme.colors.orange};
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -58,8 +63,16 @@ export const Button = styled.button`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   letter-spacing: 1.5px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 10px 0;
+  border: 2px solid ${({ theme }) => theme.colors.orange};
 
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: ${({ theme }) => theme.colors.orange};
   }
 `;
