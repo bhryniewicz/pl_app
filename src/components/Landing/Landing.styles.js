@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
     position: absolute;
     right: 100px;
     bottom: -50px;
-    opacity: 0.16;
+    opacity: 0.08;
     transform: scale(8) rotate(-35deg);
   }
 `;
@@ -32,7 +32,7 @@ export const Title = styled.h1`
   color: white;
   text-transform: uppercase;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
-  letter-spacing: 2px;
+  word-spacing: 2px;
   margin-bottom: 30px;
 
   span {
@@ -45,7 +45,7 @@ export const Title = styled.h1`
 export const Paragraph = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xsmall};
   font-family: ${({ theme }) => theme.fontFamilies.primaryFont};
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   line-height: 170%;
   margin-bottom: 30px;
@@ -56,7 +56,7 @@ export const Button = styled.button`
   width: 200px;
   background-color: ${({ theme }) => theme.colors.orange};
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   text-transform: uppercase;
   color: white;
   font-size: ${({ theme }) => theme.fontSizes.xsmall};

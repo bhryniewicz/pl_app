@@ -36,7 +36,7 @@ export const NavButton = styled.button`
   background-color: ${({ theme }) => theme.colors.orange};
   border: none;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 30px;
 
   ${fontStyles}
 `;
