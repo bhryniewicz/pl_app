@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   padding: 90px 0;
   position: relative;
   z-index: 10;
+  margin-bottom: 60px;
 
   &::before {
     content: url(${Blob});

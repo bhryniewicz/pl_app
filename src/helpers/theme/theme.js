@@ -10,6 +10,7 @@ export const theme = {
     xsmall: '16px',
     small: '18px',
     medium: '24px',
+    large: '28px',
     big: '32px',
     title: '56px',
     backgroundNum: '500px',
