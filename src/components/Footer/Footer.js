@@ -1,18 +1,6 @@
 import React from 'react';
-import {
-  Wrapper,
-  WidthWrapper,
-  Column,
-  Title,
-  El,
-  Contact,
-  Wrap,
-  Socials,
-  Input,
-  Textarea,
-  Label,
-  Button,
-} from './Footer.styles';
+import { Wrapper, WidthWrapper, Column, Title, El, Socials } from './Footer.styles';
+import { ContactForm } from 'components/ContactForm/ContactForm';
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillFacebook } from 'react-icons/ai';
 
 export const Footer = () => {
@@ -52,20 +40,7 @@ export const Footer = () => {
           <AiFillTwitterCircle style={iconsStyles} />
           <AiFillFacebook style={iconsStyles} />
         </Socials>
-        <Wrap>
-          <Title>Contact with us</Title>
-          <Contact>
-            <Label htmlFor="email">
-              E-mail
-              <Input type="text" id="email" />
-            </Label>
-            <Label htmlFor="description">
-              Write message to us
-              <Textarea name="description"></Textarea>
-            </Label>
-            <Button>Send</Button>
-          </Contact>
-        </Wrap>
+        <ContactForm />
       </WidthWrapper>
     </Wrapper>
   );

@@ -1,8 +1,6 @@
 import { Header } from 'components/Header/Header';
 import { Wrapper, WidthWrapper } from './App.styles';
-import { Landing } from 'components/Landing/Landing';
-import { Cards } from 'components/Cards/Cards';
-import { ShowOffers } from 'components/ShowOffers/ShowOffers';
+import { Main } from 'components/Main/Main';
 import { Footer } from 'components/Footer/Footer';
 
 const App = () => {
@@ -10,9 +8,7 @@ const App = () => {
     <Wrapper>
       <WidthWrapper>
         <Header />
-        <Landing />
-        <Cards />
-        <ShowOffers />
+        <Main />
       </WidthWrapper>
       <Footer />
     </Wrapper>
