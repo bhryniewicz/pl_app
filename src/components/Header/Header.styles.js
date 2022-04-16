@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.mobile} {
     display: ${({ mobile }) => (mobile ? 'flex' : 'none')};
-    margin-bottom: 200px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -79,6 +79,6 @@ export const MenuWrapper = styled.div`
 
 export const Title = styled.h1`
   color: white;
-  font-size: 40px;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   font-weight: bold;
 `;

@@ -13,11 +13,7 @@ export const Landing = () => {
     <Wrapper>
       <Description>
         <Title>
-          Find your chances with{' '}
-          <span>
-            us
-            <AiOutlineAreaChart style={chartStyle} />
-          </span>
+          Find your chances with <span>us</span>
         </Title>
         <Paragraph>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus repudiandae fugiat

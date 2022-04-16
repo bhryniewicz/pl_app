@@ -12,6 +12,10 @@ const scaleMarker = keyframes`
 
 export const SvgImage = styled.svg`
   transform: scale(0.8);
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    display: none;
+  }
+
   .overflow {
     overflow: auto;
   }

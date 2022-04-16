@@ -4,10 +4,14 @@ import { Wave } from 'assets/images';
 export const Wrapper = styled.div`
   height: 80vh;
   width: 100%;
-  margin-top: 180px;
   background-color: ${({ theme }) => theme.colors.orange};
   margin-top: 180px;
   position: relative;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    height: fit-content;
+    margin-top: 120px;
+  }
 
   &::before {
     content: url(${Wave});
@@ -15,6 +19,10 @@ export const Wrapper = styled.div`
     display: block;
     position: absolute;
     width: 100%;
+
+    @media ${({ theme }) => theme.breakpoints.mobile} {
+      top: -85px;
+    }
   }
 `;
 
@@ -25,9 +33,13 @@ export const WidthWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 270px) 70px 1fr;
   grid-template-rows: 1fr 120px;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
 `;
-
-
 
 export const Socials = styled.div`
   display: flex;
@@ -35,6 +47,11 @@ export const Socials = styled.div`
   justify-content: center;
   grid-column: 1/3;
   grid-row: 2/3;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    padding-top: 50px;
+    order: 5;
+  }
 `;
 
 export const Column = styled.div`
@@ -63,4 +80,3 @@ export const El = styled.h5`
 
   ${styles}
 `;
-

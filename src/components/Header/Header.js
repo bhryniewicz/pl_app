@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Wrapper, NavEl, Image, NavButton, MenuWrapper, Title } from './Header.styles';
 import { Diamond } from 'assets/images';
 import { MobileNav } from 'components/MobileNav/MobileNav';
+import { BsMenuButtonWide } from 'react-icons/bs';
 
 export const Header = () => {
   const [show, setShow] = useState(false);
@@ -10,9 +11,10 @@ export const Header = () => {
     setShow(!show);
   };
 
-  useEffect(() => {
-    console.log(show);
-  }, [show]);
+  const menuStyles = {
+    fontSize: '24px',
+    color: '#fff',
+  };
 
   return (
     <MenuWrapper>
@@ -23,14 +25,14 @@ export const Header = () => {
         <NavEl>Statistic</NavEl>
         <NavButton>Go live</NavButton>
       </Wrapper>
-      <Wrapper mobile>
+      <Wrapper mobile="true">
         <Title>
           Diamond
           <br />
           Rate
         </Title>
-        <Image mobile src={Diamond} alt="123" onClick={handleToggleMenu} />
-        {show && <MobileNav show={show} setShow={setShow} />}
+        {!show && <BsMenuButtonWide mobile="true" onClick={handleToggleMenu} style={menuStyles} />}
+        {show && <MobileNav show={show} setShow={setShow} menuStyles={menuStyles} />}
       </Wrapper>
     </MenuWrapper>
   );

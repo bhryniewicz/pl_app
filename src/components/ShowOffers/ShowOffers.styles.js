@@ -9,7 +9,12 @@ export const Wrapper = styled.div`
   z-index: 10;
   margin-bottom: 60px;
 
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    padding: 90px 0 0;
+  }
+
   &::before {
+    display: none;
     content: url(${Blob});
     position: absolute;
     z-index: -1;
@@ -20,6 +25,7 @@ export const Wrapper = styled.div`
   }
 
   &::after {
+    display: none;
     content: url(${Blob});
     position: absolute;
     z-index: -1;
@@ -65,5 +71,9 @@ export const Paragraph = styled.p`
 
   span {
     color: ${({ theme }) => theme.colors.orange};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    margin-top: 40px;
   }
 `;

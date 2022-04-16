@@ -11,6 +11,12 @@ export const Wrapper = styled.div`
   grid-gap: 0 50px;
 `;
 
+export const SingleCardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+`;
+
 export const Card = styled.div`
   display: flex;
   justify-content: center;
@@ -26,7 +32,7 @@ export const Card = styled.div`
   text-align: center;
 
   &::before {
-    content: '0${(props) => props.idx}';
+    content: '0${(props) => props.id}';
     display: block;
     position: absolute;
     top: 50%;

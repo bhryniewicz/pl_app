@@ -5,6 +5,12 @@ export const Wrap = styled.div`
   flex-direction: column;
   grid-column: 4/5;
   grid-row: 1/3;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -14,6 +20,10 @@ export const Title = styled.h2`
   margin-top: ${({ isList }) => (isList ? '20px' : '0')};
   color: ${({ theme }) => theme.colors.primaryBackground};
   font-family: ${({ theme }) => theme.fontFamilies.titleFont};
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Contact = styled.div`
@@ -77,5 +87,9 @@ export const Button = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    width: 100%;
   }
 `;

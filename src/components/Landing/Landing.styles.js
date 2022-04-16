@@ -10,12 +10,18 @@ export const Wrapper = styled.div`
 
   &::before {
     content: url(${Diamond});
-    display: block;
     position: absolute;
     right: 100px;
     bottom: -50px;
     opacity: 0.08;
     transform: scale(8) rotate(-35deg);
+    pointer-events: none;
+
+    @media ${({ theme }) => theme.breakpoints.mobile} {
+      right: 0;
+      bottom: 150px;
+      transform: rotate(-35deg) scale(5.5);
+    }
   }
 `;
 
@@ -24,6 +30,11 @@ export const Description = styled.div`
   flex-direction: column;
   max-width: 60%;
   padding-right: 60px;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    max-width: 100%;
+    padding-right: 0;
+  }
 `;
 
 export const Title = styled.h1`
@@ -66,6 +77,7 @@ export const Button = styled.button`
   transition: background-color 0.3s;
   margin: 10px 0;
   border: 2px solid ${({ theme }) => theme.colors.orange};
+  z-index: 500;
 
   &:focus {
     outline: none;
@@ -74,5 +86,9 @@ export const Button = styled.button`
   &:hover {
     background-color: transparent;
     color: ${({ theme }) => theme.colors.orange};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    width: 100%;
   }
 `;
