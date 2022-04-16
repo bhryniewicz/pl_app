@@ -2,11 +2,16 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   padding-top: 40px;
-  display: flex;
-  justify-content: center;
+  display: ${({ mobile }) => (mobile ? 'none' : 'flex')};
+  justify-content: ${({ mobile }) => (mobile ? 'space-between' : 'center')};
   align-items: center;
   height: 10vh;
   z-index: 100;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    display: ${({ mobile }) => (mobile ? 'flex' : 'none')};
+    margin-bottom: 200px;
+  }
 `;
 
 const fontStyles = css`
@@ -17,18 +22,37 @@ const fontStyles = css`
 `;
 
 export const NavEl = styled.h4`
+  position: relative;
   text-transform: uppercase;
-  padding: 0 35px;
+  margin: 0 40px;
+  width: min-content;
+  z-index: 50;
 
   ${fontStyles}
-  &:hover {
-    border-bottom: 2px solid ${({ theme }) => theme.colors.orange};
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 180%;
+    background-color: ${({ theme }) => theme.colors.whiteBackground};
+    opacity: 0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    z-index: 40;
+  }
+
+  &:hover::before {
+    opacity: 0.2;
   }
 `;
 
 export const Image = styled.img`
   padding: 0 10px;
-  transform: scale(0.5);
+  transform: ${({ mobile }) => (mobile ? 'scale(0.25)' : 'scale(0.5)')};
 `;
 
 export const NavButton = styled.button`
@@ -37,6 +61,24 @@ export const NavButton = styled.button`
   border: none;
   padding: 10px 20px;
   border-radius: 30px;
-
+  border: 2px solid ${({ theme }) => theme.colors.orange};
+  transition: all 0.3s ease-in-out;
   ${fontStyles}
+
+  &:hover {
+    background-color: transparent;
+    color: ${({ theme }) => theme.colors.orange};
+  }
+`;
+
+//mobile
+
+export const MenuWrapper = styled.div`
+  position: relative;
+`;
+
+export const Title = styled.h1`
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
 `;

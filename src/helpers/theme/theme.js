@@ -1,3 +1,10 @@
+const widths = {
+  xmobile: '321px',
+  mobile: '416px',
+  tablet: '769px',
+  laptop: '1100px',
+};
+
 export const theme = {
   fontWeights: {
     light: '300',
@@ -25,5 +32,11 @@ export const theme = {
     primaryBackground: '#454545',
     cardBackground: '#3f3d56',
     whiteBackground: '#e6e6e6',
+  },
+  breakpoints: {
+    xmobile: `screen and (max-width: ${widths.xmobile})`,
+    mobile: `screen and (max-width: ${widths.mobile})`,
+    tablet: `screen and (max-width: ${widths.tablet})`,
+    laptop: `screen and (max-width: ${widths.laptop})`,
   },
 };

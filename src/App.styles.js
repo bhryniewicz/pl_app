@@ -9,4 +9,8 @@ export const Wrapper = styled.div`
 export const WidthWrapper = styled.div`
   width: 1100px;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.breakpoints.mobile} {
+    width: 80%;
+  }
 `;
