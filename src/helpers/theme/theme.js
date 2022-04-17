@@ -32,6 +32,7 @@ export const theme = {
     primaryBackground: '#454545',
     cardBackground: '#3f3d56',
     whiteBackground: '#e6e6e6',
+    green: '#A1F582',
   },
   breakpoints: {
     xmobile: `screen and (max-width: ${widths.xmobile})`,
