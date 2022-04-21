@@ -19,6 +19,7 @@ export const SingleCardWrapper = styled.div`
 
 export const Card = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
@@ -29,7 +30,7 @@ export const Card = styled.div`
   z-index: 100;
   position: relative;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
 
   &::before {
     content: '0${(props) => props.id}';
@@ -47,8 +48,23 @@ export const Card = styled.div`
   &::after {
     content: url(${Diamond});
     transform: scale(0.15);
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: -10px;
+    top: -35%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.cardBackground};
+    border: 15px solid ${({ theme }) => theme.colors.orange};
+    border-radius: 50%;
   }
+`;
+
+export const Title = styled.h2`
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.fontFamilies.titleFont};
+  align-self: flex-start;
+  margin-bottom: 10px;
 `;

@@ -9,8 +9,8 @@ const App = () => {
   return (
     <Wrapper>
       <WidthWrapper>
-        <Header />
         <BrowserRouter>
+        <Header />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/stats" element={<Stats />} />

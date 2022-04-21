@@ -2,11 +2,6 @@ import React from 'react';
 import { Wrapper } from './Landing.styles';
 import { AnimatedSvg } from 'components/AnimatedSvg/AnimatedSvg';
 import { Title, Description, Button, Paragraph } from './Landing.styles';
-import { AiOutlineAreaChart } from 'react-icons/ai';
-
-const chartStyle = {
-  marginBottom: '6px',
-};
 
 export const Landing = () => {
   return (

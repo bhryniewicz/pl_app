@@ -21,7 +21,8 @@ const fontStyles = css`
   color: ${({ theme }) => theme.colors.white};
 `;
 
-export const NavEl = styled.h4`
+export const NavEl = styled.li`
+  list-style: none;
   position: relative;
   text-transform: uppercase;
   margin: 0 40px;
@@ -29,24 +30,27 @@ export const NavEl = styled.h4`
   z-index: 50;
 
   ${fontStyles}
+  a {
+    color: white;
+    text-decoration: none;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 180%;
+      background-color: ${({ theme }) => theme.colors.whiteBackground};
+      opacity: 0;
+      padding: 10px 20px;
+      border-radius: 30px;
+      z-index: 40;
+    }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 180%;
-    background-color: ${({ theme }) => theme.colors.whiteBackground};
-    opacity: 0;
-    padding: 10px 20px;
-    border-radius: 30px;
-    z-index: 40;
-  }
-
-  &:hover::before {
-    opacity: 0.2;
+    &:hover::before {
+      opacity: 0.2;
+    }
   }
 `;
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Wrapper, Card, SingleCardWrapper } from './Cards.styles';
+import { Wrapper, Card, SingleCardWrapper, Title } from './Cards.styles';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 export const Cards = () => {
@@ -20,14 +20,17 @@ export const Cards = () => {
   const contentData = [
     {
       id: '1',
+      title: 'Title 1',
       content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, veniam?',
     },
     {
       id: '2',
+      title: 'Title 2',
       content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, veniam?',
     },
     {
       id: '3',
+      title: 'Title 3',
       content: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, veniam?',
     },
   ];
@@ -58,9 +61,10 @@ export const Cards = () => {
   if (width > 416) {
     return (
       <Wrapper>
-        {contentData.map(({ id, content }) => {
+        {contentData.map(({ id, content, title }) => {
           return (
             <Card id={id} key={id}>
+              <Title>{title}</Title>
               {content}
             </Card>
           );
@@ -71,7 +75,10 @@ export const Cards = () => {
     return (
       <SingleCardWrapper>
         <FiArrowLeft onClick={decrementNum} style={arrowLeft} />
-        <Card id={contentData[cardNum]?.id}>{contentData[cardNum]?.content}</Card>
+        <Card id={contentData[cardNum]?.id}>
+          <Title>{contentData[cardNum]?.title}</Title>
+          {contentData[cardNum]?.content}
+        </Card>
         <FiArrowRight onClick={incrementNum} style={arrowStyles} />
       </SingleCardWrapper>
     );
